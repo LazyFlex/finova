@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for server-finance-app-c44-sparkling-fog-3309 on 2024-03-29T16:18:27-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'server-finance-app-c44-sparkling-fog-3309'
+primary_region = 'yyz'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
